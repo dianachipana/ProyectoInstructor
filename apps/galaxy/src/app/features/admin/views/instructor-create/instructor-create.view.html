@@ -1,0 +1,7 @@
+<app-page-title title="Instructor / Nuevo" ></app-page-title>
+
+<app-instructor-form
+class="mat-elevation-z4"
+[instructors]="presenter.instructors"
+(save)="presenter.createInstructor($event)">
+</app-instructor-form>

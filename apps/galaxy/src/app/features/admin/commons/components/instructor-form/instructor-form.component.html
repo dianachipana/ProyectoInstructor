@@ -1,0 +1,21 @@
+<form [formGroup]="form" (ngSubmit)="send()">
+
+  <mat-form-field appearance="outline">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="fullName">
+      <mat-error *ngIf="nameErrors">{{ nameErrors }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Correo electrónico</mat-label>
+      <input matInput formControlName="mail" [pattern]="patternEmail">
+      <mat-error *ngIf="emailValidator">{{ emailValidator }}</mat-error>
+    </mat-form-field>
+
+
+  <div class="actions">
+  <button type="button" mat-button color="warn" [routerLink]="[ '/administrador/instructores' ]" routerLinkActive="active">Cancelar</button> 
+  <button type="submit" mat-button color="primary"> Guardar </button> 
+  </div>
+
+  </form>

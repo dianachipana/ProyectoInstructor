@@ -1,0 +1,21 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">
+    <mat-toolbar-row>
+        <span>Portal</span>
+
+        <div>
+          <button mat-button [matMenuTriggerFor]="menu">Tema</button>
+          <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="theme.setLightTheme()">Claro</button>
+              <button mat-menu-item (click)="theme.setDarkTheme()">Oscuro</button>
+          </mat-menu>
+
+          <button routerLink="/autenticacion" mat-button>
+            <mat-icon>account_circle</mat-icon>
+            <span>Iniciar Sesión</span>
+          </button>  
+        </div>
+
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
